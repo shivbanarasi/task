@@ -49,8 +49,6 @@ function addItem(e){
   li.appendChild(editBtn);
   editBtn.style.float='right';
   editBtn.style.marginRight='10px';
-
-  // Append li to list
   itemList.appendChild(li);
 }
 
