@@ -1,2 +1,6 @@
-document.querySelector('.list-group-item:nth-child(2)').style.backgroundColor="green";
-document.querySelector('.list-group-item:nth-child(3)').style.color="white";
+let list=document.querySelectorAll('.list-group-item');
+console.log(list);
+list[2].style.color='green';
+list[1].style.backgroundColor='green';
+list[3].style.backgroundColor='green';
+
