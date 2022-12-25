@@ -4,6 +4,7 @@ selectData();
 function manageData(){
 	document.getElementById('msg').innerHTML="";
 	let name=document.getElementById('name').value;
+	
 	if(name==''){
 		document.getElementById('msg').innerHTML='Please enter your name';
 	}else{
@@ -15,16 +16,19 @@ function manageData(){
 				setCrudData(data);
 			}else{
 				arr.push(name);
+				
 				setCrudData(arr);
 			}
 			document.getElementById('msg').innerHTML='Data added';
 		}else{
 			let arr=getCrudData();
 			arr[id]=name;
+			
 			setCrudData(arr);
 			document.getElementById('msg').innerHTML='Data updated';
 		}
 		document.getElementById('name').value='';
+		
 		selectData();
 	}
 }
@@ -64,3 +68,4 @@ function getCrudData(){
 function setCrudData(arr){
 	localStorage.setItem('crud',JSON.stringify(arr));
 }
+console.log(localStorage)
