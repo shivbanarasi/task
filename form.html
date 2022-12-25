@@ -36,22 +36,27 @@
     </section>
     
 
-    <script>
+    <script id>
       function save(event){
         event.preventDefault();
         const name=event.target.username.value;
         const email=event.target.emailid.value;
-        localStorage.setItem('name',name);
-        localStorage.setItem('email',email);
+        //localStorage.setItem('name',name);
+        //localStorage.setItem('email',email);
         let myObj={
           name:name,
           email:email
         };
         let myObj_serialized=JSON.stringify(myObj);
-        localStorage.setItem("myObj",myObj_serialized);
+        localStorage.setItem(myObj.email,myObj_serialized);
         let myObj_deserialized=JSON.parse(localStorage.getItem("myObj"));
         console.log(myObj_deserialized);
-        
+
+      Object.keys(myObj).forEach((key) => {
+let stringifiedDetailsOfPeople = localStorage.getItem(key);
+let detailsOfPeople = JSON.parse(stringifiedDetailsOfPeople);
+
+});
       }
     </script>
   </body>
