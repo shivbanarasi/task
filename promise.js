@@ -43,11 +43,17 @@ function isempty(){
         console.log("no object left");
     }
 }
+function updateLastUserActivityTime(){
+    return new Promise((resolve,reject)=>{
+        resolve(console.log("last user activity done on : "+new Date()));
+    })
+}
 createPost({title:"post three",body:"this is post three"
 })
 createPost({title:"post four",body:"this is post fout"
 }).then(()=>{
     getPosts()
+    updateLastUserActivityTime()
     deletePost().then(()=>{
         getPosts();
         deletePost().then(()=>{
@@ -63,5 +69,12 @@ createPost({title:"post four",body:"this is post fout"
             })
         })
     })
+
 })
 })
+const promise1=Promise.resolve("hello world");
+const promise2=10;
+const promise3=new Promise((resolve,reject)=>{
+    setTimeout(resolve,2000,"goodbye")
+});
+Promise.all([promise1,promise2,promise3]).then(values=>{console.log(values)});
