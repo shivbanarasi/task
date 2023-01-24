@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center; " id="head1">add your items</h1>
+    <label for="sellprice">selling price : </label>
+    <input type="text" name="sellprice" id="sellprice">
+    <label for="proname">product name : </label>
+    <input type="text" name="proname" id="proname">
+    <label for="category">category : </label>
+    <select name="catergory" id="category">
+        <option value="skincare" >Skin care items</option>
+        <option value="electronics" >electronics items</option>
+        <option value="food" >food items</option>
+    </select>
+    <button onclick="submit()">submit</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
+</body>
+<script src="product.js"></script>
+</html>
